@@ -33,37 +33,51 @@
              </div>
 
 
-             <div class="w-[calc(100%-30px)] flex">
-                <div class="w-[calc(100%-200px)] flex justify-center">
-                    <form class="flex items-center w-[500px]">
-                        <label for="voice-search" class="sr-only">Search</label>
-                        <div class="relative w-full">
-                            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                <!-- searcj icons -->s
-                            </div>
-                            <input type="text" id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue">
-                            <router-link to="/" class="flex absolute inset-y-0 right-0 items-center pr-3">G</router-link>
-                        </div>
-                    </form>
-                </div>
-                <div class="w-[200px]">
-                    <div class="flex items-center justify-center space-y-4" @click="toggleDrop">
-                        <div>H</div>
-                        <div class="font-semibold dark:text-white text-left">
-                            <div>Madona, Dev Op</div>
-                              <div class="text-xs text-gray-500 dark:text-gray-400">Admin</div>
-                        </div>
-                    </div>
-                    <div v-show="showDropDown" class="absolute right-[18px] z-18 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1">
-                        <div class="py-1 text-left" role="none">
-                            <a href="#">1</a>
-                            <a href="#">1</a>
-                            <a href="#">1</a>
-                            <form type="submit">add</form>
-                        </div>
-                    </div>
-                </div>
-             </div>
+             <div class="w-full flex flex-col md:flex-row justify-between px-4 py-2">
+  <!-- Left Section: Search Bar -->
+  <div class="w-full md:w-auto flex justify-center md:flex-1 mb-4 md:mb-0">
+    <form class="flex items-center w-full md:w-[500px]">
+      <label for="voice-search" class="sr-only">Search</label>
+      <div class="relative w-full">
+        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+          <!-- Search icon -->
+        </div>
+        <input type="text" id="voice-search" 
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue focus:border-blue-500 w-full pl-10 pr-10 py-2" 
+               placeholder="Search...">
+        <router-link to="/" class="flex absolute inset-y-0 right-0 items-center pr-3">
+          <!-- Search action (e.g., a search icon) -->
+          G
+        </router-link>
+      </div>
+    </form>
+  </div>
+
+  <!-- Right Section: Profile and Dropdown -->
+  <div class="w-full md:w-[200px] relative">
+    <div class="flex items-center justify-center space-x-2 cursor-pointer" @click="toggleDrop">
+      <div class="h-8 w-8 bg-gray-300 rounded-full flex items-center justify-center">
+        H <!-- Profile picture or initial -->
+      </div>
+      <div class="font-semibold text-center md:text-left">
+        <div>Madona, Dev Op</div>
+        <div class="text-xs text-gray-500">Admin</div>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div v-show="showDropDown" class="absolute right-0 z-20 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+      <div class="py-1" role="none">
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 1</a>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 2</a>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Option 3</a>
+        <form type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Add</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
           </div>
           <div class="h-[calc(100vh-50px)] bg-gray-50 p-[20px]">
             <div class="border border-gray-300 rounded-md p-[20px] h-full">
